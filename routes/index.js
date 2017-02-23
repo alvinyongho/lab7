@@ -5,5 +5,14 @@ var projects = require('../projects.json');
  */
 
 exports.view = function(req, res){
-  	res.render('index', projects);
+    projects["grid"] = false;
+    res.render('index', projects);
+};
+
+
+
+exports.viewGrid = function(req, res){
+    projects["grid"] = true;
+    console.log(projects)
+    res.render('index', projects);
 };
